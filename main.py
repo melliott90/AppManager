@@ -21,18 +21,13 @@ import urllib
 
 
 
-#template_env = jinja2.Environment(loader=jinja2.FileSystemLoader(os.getcwd()))
-JINJA_ENVIRONMENT = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
-    extensions=['jinja2.ext.autoescape'],
-    autoescape=True)
-
+JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.getcwd()))
 
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('home.html')
+        template = JINJA_ENVIRONMENT.get_template('/webHtml/home.html')
         self.response.write(template.render() )
 
 app = webapp2.WSGIApplication([
