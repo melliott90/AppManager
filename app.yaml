@@ -9,9 +9,20 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /staticFiles
+  static_dir: staticFiles
+
 - url: .*
   script: main.app
 
 libraries:
+- name: pycrypto
+  version: latest
+- name: endpoints
+  version: 1.0
 - name: webapp2
-  version: "2.5.2"
+  version: latest
+- name: jinja2
+  version: latest
+- name: markupsafe
+  version: "0.15"
